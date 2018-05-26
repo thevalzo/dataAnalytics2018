@@ -20,27 +20,9 @@ Questo l'ordine di esecuzione:
 	- pip install re
 	- pip install bs4
 
-Il database è costituito dalle tabelle 
-	- `data_analytics`.`entities`
-		(`idEntities`,
-		`uri`,
-		`similarityScore`,
-		`types`,
-		`surfaceForm`,
-		`source`,
-		`idArticle`,
-		`confidence`,
-		`offset`)
-
-	-`data_analytics`.`articles`
-		(`idarticle`,
-		`url`,
-		`keyword`,
-		`article`,
-		`location`,
-		`date`,
-		`section`,
-		`tooLong`)
+Il database è costituito dalle tabelle materializzabili con queste istruzioni:
+	'articles': 'CREATE TABLE `articles` (\n  `idarticle` int(11) NOT NULL AUTO_INCREMENT,\n  `url` varchar(250) DEFAULT NULL,\n  `keyword` varchar(45) DEFAULT NULL,\n  `article` mediumtext,\n  `location` varchar(45) DEFAULT NULL,\n  `date` varchar(45) DEFAULT NULL,\n  `section` varchar(45) DEFAULT NULL,\n  `tooLong` tinyint(4) DEFAULT \'0\',\n  PRIMARY KEY (`idarticle`)\n) ENGINE=InnoDB AUTO_INCREMENT=27068 DEFAULT CHARSET=utf8'
+	'entities': 'CREATE TABLE `entities` (\n  `idEntities` int(11) NOT NULL AUTO_INCREMENT,\n  `uri` varchar(150) DEFAULT NULL,\n  `similarityScore` decimal(17,16) DEFAULT NULL,\n  `types` varchar(300) DEFAULT NULL,\n  `surfaceForm` varchar(45) DEFAULT NULL,\n  `source` varchar(45) DEFAULT NULL,\n  `idArticle` int(11) DEFAULT NULL,\n  `confidence` decimal(17,16) DEFAULT NULL,\n  `offset` int(11) DEFAULT NULL,\n  PRIMARY KEY (`idEntities`)\n) ENGINE=InnoDB AUTO_INCREMENT=70857 DEFAULT CHARSET=utf8'
 
 **** ESECUZIONE
 	

@@ -74,7 +74,7 @@ class GDBSpider(scrapy.Spider):
             cursor = self.db.cursor()
             query = "SELECT url, keyword, location FROM articles WHERE url =\'" + str(url) + "\' AND keyword=\'" + str(actualKeyword) + "\'AND location=\'" + str(actualLocation) + "\';"
             cursor.execute(query)
-            cursor.fetchAll()
+            cursor.fetchall()
 
             if (cursor.rowcount == 0 ):
                 # Insert link

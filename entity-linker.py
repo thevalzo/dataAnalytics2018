@@ -10,7 +10,7 @@ db = MySQLdb.connect(host="127.0.0.1",
                                   user="root",
                                   passwd="root",
                                   db="data_analytics")
-
+#LAST 22892
 #Retrive all articles
 cursor = db.cursor()
 cursor.execute("select articles.idArticle, articles.article from articles where articles.idArticle not in (select DISTINCT articles.idArticle from articles,entities where articles.idArticle = entities.idArticle ) and articles.tooLong=0;")
