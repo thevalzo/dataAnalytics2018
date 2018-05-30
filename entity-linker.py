@@ -33,7 +33,7 @@ for row in results:
     url="https://api.dbpedia-spotlight.org/en/annotate?"+params
     r = requests.get(url=url)
     r.encoding = 'utf-8'
-    text=r.text
+    text=r.text.encode('utf-8')
 
     if(text[:6] == "<html>" or text[:14] == "<!DOCTYPE HTML"):
 

@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6daabd8-a78d-4a03-9c35-2e211c6ed6f4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/focused_crawler/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/entity-linker.py" afterPath="$PROJECT_DIR$/entity-linker.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/focused_crawler/focused_crawler/spiders/GDB_articles_spyder.py" afterPath="$PROJECT_DIR$/focused_crawler/focused_crawler/spiders/GDB_articles_spyder.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/focused_crawler/focused_crawler/spiders/GDB_spyder.py" afterPath="$PROJECT_DIR$/focused_crawler/focused_crawler/spiders/GDB_spyder.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,25 +13,25 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DataAnalytics$entity_linker.coverage" NAME="entity-linker Coverage Results" MODIFIED="1527667539811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DataAnalytics$entity_linker.coverage" NAME="entity-linker Coverage Results" MODIFIED="1527668178119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DataAnalytics$nerd.coverage" NAME="nerd Coverage Results" MODIFIED="1527513537274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/focused_crawler/focused_crawler" />
     <SUITE FILE_PATH="coverage/DataAnalytics$crawler.coverage" NAME="crawler Coverage Results" MODIFIED="1527075512238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="entity-linker.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="entity-linker.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/entity-linker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-693">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="456">
+              <caret line="50" column="57" lean-forward="true" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
               <folding>
                 <element signature="e#24#39#0" expanded="true" />
-                <marker date="1527667641288" expanded="true" signature="456:565" ph="select artic... articles" />
-                <marker date="1527667641288" expanded="true" signature="456:670" ph="SELECT idart... articles" />
-                <marker date="1527667641288" expanded="true" signature="456:693" ph="select artic... articles" />
-                <marker date="1527667641288" expanded="true" signature="565:668" ph="select DISTI... articles" />
-                <marker date="1527667641288" expanded="true" signature="1473:1544" ph="UPDATE artic... " />
-                <marker date="1527667641288" expanded="true" signature="2143:2215" ph="UPDATE artic... " />
+                <marker date="1527668178063" expanded="true" signature="456:565" ph="select artic... articles" />
+                <marker date="1527668178063" expanded="true" signature="456:670" ph="SELECT idart... articles" />
+                <marker date="1527668178063" expanded="true" signature="456:693" ph="select artic... articles" />
+                <marker date="1527668178063" expanded="true" signature="565:668" ph="select DISTI... articles" />
+                <marker date="1527668178063" expanded="true" signature="1489:1560" ph="UPDATE artic... " />
+                <marker date="1527668178063" expanded="true" signature="2159:2231" ph="UPDATE artic... " />
               </folding>
             </state>
           </provider>
@@ -44,8 +40,8 @@
       <file leaf-file-name="GDB_spyder.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/focused_crawler/focused_crawler/spiders/GDB_spyder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="882">
+              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding>
                 <marker date="1527599940546" expanded="true" signature="2663:2825" ph="SELECT url, articles" />
                 <marker date="1527599940546" expanded="true" signature="3030:3216" ph="INSERT INTO articles... " />
@@ -54,7 +50,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="21">
@@ -67,7 +63,7 @@
       <file leaf-file-name="GDB_articles_spyder.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/focused_crawler/focused_crawler/spiders/GDB_articles_spyder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="887">
+            <state relative-caret-position="1071">
               <caret line="55" column="32" lean-forward="false" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
               <folding>
                 <marker date="1527601219487" expanded="true" signature="584:621" ph="SELECT idart... articles" />
@@ -82,7 +78,7 @@
       <file leaf-file-name="total_spyder_3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Crawler/crawler/crawler/spiders/total_spyder_3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="809">
+            <state relative-caret-position="3234">
               <caret line="160" column="105" lean-forward="false" selection-start-line="160" selection-start-column="53" selection-end-line="160" selection-end-column="105" />
               <folding />
             </state>
@@ -163,6 +159,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,7 +182,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -321,7 +317,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="856" y="444" width="207" height="141" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="856" y="444" width="207" height="141" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -349,16 +345,85 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/entity-linker.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#39#0" expanded="true" />
+            <marker date="1527668178063" expanded="true" signature="456:565" ph="select artic... articles" />
+            <marker date="1527668178063" expanded="true" signature="456:670" ph="SELECT idart... articles" />
+            <marker date="1527668178063" expanded="true" signature="456:693" ph="select artic... articles" />
+            <marker date="1527668178063" expanded="true" signature="565:668" ph="select DISTI... articles" />
+            <marker date="1527668178063" expanded="true" signature="1489:1560" ph="UPDATE artic... " />
+            <marker date="1527668178063" expanded="true" signature="2159:2231" ph="UPDATE artic... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/focused_crawler/focused_crawler/spiders/GDB_spyder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <marker date="1527599940546" expanded="true" signature="2663:2825" ph="SELECT url, articles" />
+            <marker date="1527599940546" expanded="true" signature="3030:3216" ph="INSERT INTO articles... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/focused_crawler/focused_crawler/spiders/GDB_articles_spyder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="55" column="32" lean-forward="false" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
+          <folding>
+            <marker date="1527601219487" expanded="true" signature="584:621" ph="SELECT idart... articles" />
+            <marker date="1527601219487" expanded="true" signature="584:634" ph="SELECT idart... articles2" />
+            <marker date="1527601219487" expanded="true" signature="584:642" ph="SELECT idart... articles" />
+            <marker date="1527601219487" expanded="true" signature="1879:1951" ph="UPDATE artic... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Crawler/crawler/crawler/spiders/total_spyder_3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3234">
+          <caret line="160" column="105" lean-forward="false" selection-start-line="160" selection-start-column="53" selection-end-line="160" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Crawler/crawler/crawler/spiders/total_spyder_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3045">
+          <caret line="151" column="25" lean-forward="false" selection-start-line="151" selection-start-column="25" selection-end-line="151" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <marker date="1516803664904" expanded="true" signature="864:1030" ph="SELECT url, tweets" />
+            <marker date="1516803664904" expanded="true" signature="5031:5096" ph="UPDATE tweet... " />
+            <marker date="1516803664904" expanded="true" signature="5459:5694" ph="UPDATE tweet... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity-linker.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
           <folding>
             <element signature="e#24#39#0" expanded="true" />
-            <marker date="1527667641288" expanded="true" signature="456:565" ph="select artic... articles" />
-            <marker date="1527667641288" expanded="true" signature="456:670" ph="SELECT idart... articles" />
-            <marker date="1527667641288" expanded="true" signature="456:693" ph="select artic... articles" />
-            <marker date="1527667641288" expanded="true" signature="565:668" ph="select DISTI... articles" />
-            <marker date="1527667641288" expanded="true" signature="1473:1544" ph="UPDATE artic... " />
-            <marker date="1527667641288" expanded="true" signature="2143:2215" ph="UPDATE artic... " />
+            <marker date="1527668178063" expanded="true" signature="456:565" ph="select artic... articles" />
+            <marker date="1527668178063" expanded="true" signature="456:670" ph="SELECT idart... articles" />
+            <marker date="1527668178063" expanded="true" signature="456:693" ph="select artic... articles" />
+            <marker date="1527668178063" expanded="true" signature="565:668" ph="select DISTI... articles" />
+            <marker date="1527668178063" expanded="true" signature="1489:1560" ph="UPDATE artic... " />
+            <marker date="1527668178063" expanded="true" signature="2159:2231" ph="UPDATE artic... " />
           </folding>
         </state>
       </provider>
@@ -414,12 +479,12 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#39#0" expanded="true" />
-            <marker date="1527667641288" expanded="true" signature="456:565" ph="select artic... articles" />
-            <marker date="1527667641288" expanded="true" signature="456:670" ph="SELECT idart... articles" />
-            <marker date="1527667641288" expanded="true" signature="456:693" ph="select artic... articles" />
-            <marker date="1527667641288" expanded="true" signature="565:668" ph="select DISTI... articles" />
-            <marker date="1527667641288" expanded="true" signature="1473:1544" ph="UPDATE artic... " />
-            <marker date="1527667641288" expanded="true" signature="2143:2215" ph="UPDATE artic... " />
+            <marker date="1527668178063" expanded="true" signature="456:565" ph="select artic... articles" />
+            <marker date="1527668178063" expanded="true" signature="456:670" ph="SELECT idart... articles" />
+            <marker date="1527668178063" expanded="true" signature="456:693" ph="select artic... articles" />
+            <marker date="1527668178063" expanded="true" signature="565:668" ph="select DISTI... articles" />
+            <marker date="1527668178063" expanded="true" signature="1489:1560" ph="UPDATE artic... " />
+            <marker date="1527668178063" expanded="true" signature="2159:2231" ph="UPDATE artic... " />
           </folding>
         </state>
       </provider>
@@ -451,12 +516,12 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#39#0" expanded="true" />
-            <marker date="1527667641288" expanded="true" signature="456:565" ph="select artic... articles" />
-            <marker date="1527667641288" expanded="true" signature="456:670" ph="SELECT idart... articles" />
-            <marker date="1527667641288" expanded="true" signature="456:693" ph="select artic... articles" />
-            <marker date="1527667641288" expanded="true" signature="565:668" ph="select DISTI... articles" />
-            <marker date="1527667641288" expanded="true" signature="1473:1544" ph="UPDATE artic... " />
-            <marker date="1527667641288" expanded="true" signature="2143:2215" ph="UPDATE artic... " />
+            <marker date="1527668178063" expanded="true" signature="456:565" ph="select artic... articles" />
+            <marker date="1527668178063" expanded="true" signature="456:670" ph="SELECT idart... articles" />
+            <marker date="1527668178063" expanded="true" signature="456:693" ph="select artic... articles" />
+            <marker date="1527668178063" expanded="true" signature="565:668" ph="select DISTI... articles" />
+            <marker date="1527668178063" expanded="true" signature="1489:1560" ph="UPDATE artic... " />
+            <marker date="1527668178063" expanded="true" signature="2159:2231" ph="UPDATE artic... " />
           </folding>
         </state>
       </provider>
@@ -467,12 +532,12 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#39#0" expanded="true" />
-            <marker date="1527667641288" expanded="true" signature="456:565" ph="select artic... articles" />
-            <marker date="1527667641288" expanded="true" signature="456:670" ph="SELECT idart... articles" />
-            <marker date="1527667641288" expanded="true" signature="456:693" ph="select artic... articles" />
-            <marker date="1527667641288" expanded="true" signature="565:668" ph="select DISTI... articles" />
-            <marker date="1527667641288" expanded="true" signature="1473:1544" ph="UPDATE artic... " />
-            <marker date="1527667641288" expanded="true" signature="2143:2215" ph="UPDATE artic... " />
+            <marker date="1527668178063" expanded="true" signature="456:565" ph="select artic... articles" />
+            <marker date="1527668178063" expanded="true" signature="456:670" ph="SELECT idart... articles" />
+            <marker date="1527668178063" expanded="true" signature="456:693" ph="select artic... articles" />
+            <marker date="1527668178063" expanded="true" signature="565:668" ph="select DISTI... articles" />
+            <marker date="1527668178063" expanded="true" signature="1489:1560" ph="UPDATE artic... " />
+            <marker date="1527668178063" expanded="true" signature="2159:2231" ph="UPDATE artic... " />
           </folding>
         </state>
       </provider>
@@ -551,7 +616,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../Crawler/crawler/crawler/spiders/total_spyder_3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="809">
+        <state relative-caret-position="3234">
           <caret line="160" column="105" lean-forward="false" selection-start-line="160" selection-start-column="53" selection-end-line="160" selection-end-column="105" />
           <folding />
         </state>
@@ -559,7 +624,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/focused_crawler/focused_crawler/spiders/GDB_articles_spyder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="887">
+        <state relative-caret-position="1071">
           <caret line="55" column="32" lean-forward="false" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
           <folding>
             <marker date="1527601219487" expanded="true" signature="584:621" ph="SELECT idart... articles" />
@@ -572,27 +637,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/focused_crawler/focused_crawler/spiders/GDB_spyder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="882">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
             <marker date="1527599940546" expanded="true" signature="2663:2825" ph="SELECT url, articles" />
             <marker date="1527599940546" expanded="true" signature="3030:3216" ph="INSERT INTO articles... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity-linker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-693">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#39#0" expanded="true" />
-            <marker date="1527667641288" expanded="true" signature="456:565" ph="select artic... articles" />
-            <marker date="1527667641288" expanded="true" signature="456:670" ph="SELECT idart... articles" />
-            <marker date="1527667641288" expanded="true" signature="456:693" ph="select artic... articles" />
-            <marker date="1527667641288" expanded="true" signature="565:668" ph="select DISTI... articles" />
-            <marker date="1527667641288" expanded="true" signature="1473:1544" ph="UPDATE artic... " />
-            <marker date="1527667641288" expanded="true" signature="2143:2215" ph="UPDATE artic... " />
           </folding>
         </state>
       </provider>
@@ -602,6 +651,22 @@
         <state relative-caret-position="21">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity-linker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="50" column="57" lean-forward="true" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
+          <folding>
+            <element signature="e#24#39#0" expanded="true" />
+            <marker date="1527668178063" expanded="true" signature="456:565" ph="select artic... articles" />
+            <marker date="1527668178063" expanded="true" signature="456:670" ph="SELECT idart... articles" />
+            <marker date="1527668178063" expanded="true" signature="456:693" ph="select artic... articles" />
+            <marker date="1527668178063" expanded="true" signature="565:668" ph="select DISTI... articles" />
+            <marker date="1527668178063" expanded="true" signature="1489:1560" ph="UPDATE artic... " />
+            <marker date="1527668178063" expanded="true" signature="2159:2231" ph="UPDATE artic... " />
+          </folding>
         </state>
       </provider>
     </entry>
