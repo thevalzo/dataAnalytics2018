@@ -16,11 +16,12 @@ class GDBSpider(scrapy.Spider):
         self.db = MySQLdb.connect(host="127.0.0.1",
                                   user="root",
                                   passwd="root",
-                                  db="data_analytics")
+                                  db="data_analytics",
+                                  charset = 'utf8')
 
         # Retrieve all inserted links
         cursor = self.db.cursor()
-        cursor.execute("SELECT idarticle, url  from articles where article is null;")
+        cursor.execute("SELECT idarticle, url  from articles WHERE article is null;")
         results = cursor.fetchall()
 
         # Make a request for every link's page
@@ -38,14 +39,15 @@ class GDBSpider(scrapy.Spider):
         id = response.meta.get('id')
 
         # Do the html parse
-        soup = BeautifulSoup(body, 'html.parser' ,  from_encoding='ISO-Latin-1')
+        soup = BeautifulSoup(body, 'html.parser' ,  from_encoding='utf8')
         [s.extract() for s in soup("ul", {"class": "article-service"})]
         [s.extract() for s in soup("div", {"class": "adv-inset"})]
         [s.extract() for s in soup("p", {"class": "copyright"})]
         results = soup.find("div", {"class": "article-base-body"})
 
         # Apply the correct codification
-        text=unidecode.unidecode(results.get_text())
+        #text=unidecode.unidecode(results.get_text())
+        text=results.get_text()
         text = filter(lambda x: not re.match(r'^\n*$', x), text)
         text=text.replace('\"', '\\\"').replace('\'','\\\'')
 

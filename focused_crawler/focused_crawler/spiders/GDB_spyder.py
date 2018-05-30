@@ -32,7 +32,8 @@ class GDBSpider(scrapy.Spider):
         self.db = MySQLdb.connect(host="127.0.0.1",
                                   user="root",
                                   passwd="root",
-                                  db="data_analytics")
+                                  db="data_analytics",
+                                  charset='utf8')
 
         # Make a request to the search engine for every keyword, location and result page (default 1-500)
         for i in range(0, keywords.__len__()):
