@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import scrapy
 import unidecode
 import MySQLdb
@@ -14,7 +15,8 @@ class GDBSpider(scrapy.Spider):
     def start_requests(self):
 
         #Keywords to search in the search engine of GDB
-        keywords=["brescia"]
+        #keywords=["brescia"]
+        keywords = ["città"]
         actualKeyword=""
 
         # Location for filtering the search results
@@ -73,14 +75,14 @@ class GDBSpider(scrapy.Spider):
 
             # Check for already inserted links
             cursor = self.db.cursor()
-            query = "SELECT url, keyword, location FROM articles WHERE url =\'" + str(url) + "\' AND keyword=\'" + str(actualKeyword) + "\'AND location=\'" + str(actualLocation) + "\';"
+            query = "SELECT url, keyword, location FROM results WHERE url =\'" + str(url) + "\' AND keyword=\'" + str(actualKeyword) + "\'AND location=\'" + str(actualLocation) + "\';"
             cursor.execute(query)
             cursor.fetchall()
 
             if (cursor.rowcount == 0 ):
                 # Insert link
                 cursor = self.db.cursor()
-                query = "INSERT INTO articles (url, keyword, location, section, date) VALUES  (\'"+url+"\', \'"+actualKeyword+"\', \'"+actualLocation+"\', \'"+actualSection+"\', \'"+str(dates[i].get_text())+"\');"
+                query = "INSERT INTO results (url, keyword, location, section, date) VALUES  (\'"+url.decode('utf8')+"\', \'"+actualKeyword.decode('utf8')+"\', \'"+actualLocation+"\', \'"+actualSection+"\', \'"+str(dates[i].get_text())+"\');"
                 cursor.execute(query)
         self.db.commit()
 
