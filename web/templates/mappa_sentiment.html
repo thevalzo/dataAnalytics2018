@@ -1,0 +1,255 @@
+<html>
+<head>
+  <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+
+  <script src="{{ url_for('static', filename='jquery-3.1.1.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-theme.min.css') }}">
+  <style>
+    img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+</style>
+</head>
+<body >
+<div class="container-fluid" >
+  <div class="row">
+    <div class="col-md-6" style="height: 13%;">    
+      <h1 class="display-1" style="height: 13%; margin-top:6%; cursor: pointer;" onclick="location.href='http://127.0.0.1:5000/';"> &nbsp A walk in Brescia / <small>locations' sentiment with NER</small></h1>
+    </div>
+    <div class="col-md-6" style="height: 15%;">
+      <img src="..\static\images\skyline.jpg" class="img-fluid" alt="Responsive image" style=" height:100%;">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" style="height: 1%; background:linear-gradient(to right, green, yellow, orange, brown, purple, blue)">
+    </div>
+   </div> 
+  <div class="row">
+    <div class="col-md-10" style="height: 84%, margin-left:-30px; margin-right:-30px;">
+      <div id="mapdiv" ></div>
+      <script>
+
+        var map = new OpenLayers.Map("mapdiv");
+        map.addLayer(new OpenLayers.Layer.OSM());
+
+        var circleFeatures = [];
+        var zoom={{params['zoom']}};
+
+
+        var circlesLayer = new OpenLayers.Layer.Vector("Circles");
+        var markers = new OpenLayers.Layer.Markers( "Markers" );
+
+        {{params['counters']}}
+        map.addLayer(markers);
+
+        {% for i in range(0,places.__len__()) %}
+
+        point{{i}} = new OpenLayers.Geometry.Point({{places[i]['latitude']}},{{places[i]['longitude']}}).transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+            );
+ 
+
+        {% if params['sentiment'] == "1"%}
+        var circle{{i}} = OpenLayers.Geometry.Polygon.createRegularPolygon( point{{i}} , {{places[i]['sentiment_norm']}}*0.5*{{params['circle_size']}}, 20, 90); // According to the API you only need 20 sides to approximate a circle.
+          {% if places[i]['sentiment_norm'] > 0%}
+           var style = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
+          style.fillColor = '#66ff66';
+          style.fillOpacity = 0.5;
+          style.strokeColor = '#66ff66';
+          style.strokeWidth = 1;
+          {% endif %}
+          {% if places[i]['sentiment_norm'] < 0%}
+           var style = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
+          style.fillColor = '#ff3300';
+          style.fillOpacity = 0.5;
+          style.strokeColor = '#ff3300';
+          style.strokeWidth = 1;
+          {% endif %}
+
+        {% else %}
+        var circle{{i}} = OpenLayers.Geometry.Polygon.createRegularPolygon( point{{i}} ,{{places[i]['sentiment']}}*{{params['circle_size']}}, 20, 90); // According to the API you only need 20 sides to approximate a circle.
+          {% if places[i]['sentiment'] > 0%}
+           var style = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
+          style.fillColor = '#66ff66';
+          style.fillOpacity = 0.5;
+          style.strokeColor = '#66ff66';
+          style.strokeWidth = 1;
+          {% endif %}
+          {% if places[i]['sentiment'] < 0%}
+           var style = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
+          style.fillColor = '#ff3300';
+          style.fillOpacity = 0.5;
+          style.strokeColor = '#ff3300';
+          style.strokeWidth = 1;
+          {% endif %}
+        {% endif %}
+       
+
+        var circleFeature{{i}} = new OpenLayers.Feature.Vector(circle{{i}}, null,   style);
+
+
+        // add more styling key/value pairs as your need
+
+
+
+        circleFeatures.push(circleFeature{{i}});
+
+
+
+        var lonLat{{i}} = new OpenLayers.LonLat( {{places[i]['latitude']}}, {{places[i]['longitude']}})
+        .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+                );
+        var marker{{i}} = new OpenLayers.Marker(lonLat{{i}})
+        marker{{i}}.id = "{{i}}";
+        marker{{i}}.events.register("click", marker{{i}}, function() {   window.open("http://127.0.0.1:5000/place_sentiment?wd_id={{places[i]['wikidata_id']}}&type={{places[i]['type']}}"); });
+        markers.addMarker(marker{{i}});
+        
+    // Add the vector layer to the map.
+
+    {% endfor %}
+    circlesLayer.addFeatures(circleFeatures);
+
+    circlesLayer.redraw();
+
+     var lonLat_base = new OpenLayers.LonLat(10.220278, 45.538889)    .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+                );
+    map.setCenter (lonLat_base, zoom);
+
+
+
+
+
+</script>
+</div>
+<div class="col-md-2" style="height: 84%;">
+
+
+
+  <form action="/brescia_filtered_sentiment" method="get">
+    <div class=" row" style="margin-left:5%; margin-top:3%">
+      <legend class="col-form-label pt-0">Show places with..</legend>
+      <select name="citations" class="form-control">
+        <option value="0">Any n° of citations</option>
+        <option value="10">From 10 citations</option>
+        <option value="50">From 50 citations</option>
+        <option value="100">From 100 citations</option>
+      </select>
+    </div>
+    <fieldset name="aggregated_type" class="form-group">
+      <div class="row" style="margin-left:5%; margin-top:3%">
+        <legend class="col-form-label pt-0">Counters</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="normalize" value="1" id="defaultCheck1" >
+          <label class="form-check-label" for="defaultCheck1">
+           Normalize
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    <div class=" row" style="margin-left:0%; margin-top:3%">
+      <div class="col-md-6">
+      <p style="margin-top:5%">Counter size :</p>
+    </div>
+    <div class="col-md-6">
+      <select name="circle_size" class="form-control" >
+
+        <option value="2">x 2</option>
+        <option value="3">x 3</option>
+        <option value="4">x 4</option>
+        <option value="5">x 5</option>
+        <option value="5">x 10</option>
+      </select>
+    </div>
+     </div>
+    <fieldset name="aggregated_type" class="form-group">
+      <div class="row" style="margin-left:5%; margin-top:5%">
+        <legend class="col-form-label pt-0">Kind of places</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="elemento_stradale" value="1" id="defaultCheck1" checked>
+          <label class="form-check-label" for="defaultCheck1">
+            Elementi stradali
+          </label>
+        </div>
+      </div>
+      <div class="row" style="margin-left:5%">
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="sede_scolastica" value="1" id="defaultCheck2" checked>
+          <label class="form-check-label" for="defaultCheck1">
+            Sedi scolastiche/culturali
+          </label>
+        </div>
+      </div>
+      <div class="row" style="margin-left:5%">
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="luogo_turistico" value="1" id="defaultCheck3" checked>
+          <label class="form-check-label" for="defaultCheck1">
+           Luoghi turistici/Monumenti
+          </label>
+        </div>
+      </div>
+       <div class="row" style="margin-left:5%">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="edificio_religioso" value="1" id="defaultCheck4" checked>
+          <label class="form-check-label" for="defaultCheck1">
+            Edifici religiosi
+        </div>
+      </div>
+            <div class="row" style="margin-left:5%">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="suddivisione_cittadina" value="1" id="defaultCheck5" checked>
+          <label class="form-check-label" for="defaultCheck1">
+            Zone cittadine
+          </label>
+        </div>
+      </div>
+      <div class="row" style="margin-left:5%">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="edifici_civili" value="1" id="defaultCheck6" checked>
+          <label class="form-check-label" for="defaultCheck1">
+            Edifici civili
+          </label>
+        </div>
+      </div>
+      <div class="row" style="margin-left:5%">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="fermata_tpl" value="1" id="defaultCheck7" checked>
+          <label class="form-check-label" for="defaultCheck1">
+            Fermate del TPL
+          </label>
+        </div>
+      </div>
+      <div class="row" style="margin-left:5%">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="edificio_sanitario" value="1" id="defaultCheck8" checked>
+          <label class="form-check-label" for="defaultCheck1">
+            Edifici sanitari
+          </label>
+        </div>
+      </div>
+      <div class="row" style="margin-left:5%">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="edificio_sportivo" value="1" id="defaultCheck9" checked>
+          <label class="form-check-label" for="defaultCheck1">
+            Edifici sportivi
+          </label>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="form-group row" style="margin-left:5%">
+
+      <button type="submit" class="btn btn-primary">Aggiorna</button>
+
+    </div>
+  </form>
+</div>
+</div>
+</body></html>

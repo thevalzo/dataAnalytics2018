@@ -1,0 +1,93 @@
+<html>
+<head>
+  <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+
+  <script src="{{ url_for('static', filename='jquery-3.1.1.js') }}"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <style>
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row" style="height: 13%;">
+    <div class="col-md-12">    
+      <h5 class="display-4 text-center" style="height: 12%; margin-top:1%; cursor: pointer;" onclick="location.href='http://127.0.0.1:5000/';">
+       &nbsp A walk in Brescia / <small>locations' sentiment with NER </small></h5> 
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-lg-12"  style="height: 1%; background:linear-gradient(to right, green, yellow, orange, brown, purple, blue)">
+    </div>
+  </div> 
+
+
+  <div class="row" style="; margin-top:2%" >
+    <div class="col-md-1">  
+    </div>
+    <div class="col-md-5">  
+      <div class="card w-100 text-center">
+        <div class="card-body">
+          <h5 class="card-title">Dataset</h5>
+          <p class="card-text">Take an overview over the dataset and its main charateristics</p>
+          <a href="http://127.0.0.1:5000/dataset_entities" class="btn btn-outline-primary">Go</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">  
+      <div class="card w-100 text-center">
+        <div class="card-body">
+          <h5 class="card-title">Places' map</h5>
+          <p class="card-text">Discover where are the places linked</p>
+          <a href="http://127.0.0.1:5000/brescia" class="btn btn-outline-secondary">Go</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-1">  
+
+    </div>
+  </div>
+  <div class="row" style="margin-top:2%">
+    <div class="col-md-1">  
+
+    </div>
+    <div class="col-md-5">  
+      <div class="card w-100 text-center">
+        <div class="card-body">
+          <h5 class="card-title">Sentiment</h5>
+          <p class="card-text">Discover the sentiment about the principal places</p>
+          <a href="http://127.0.0.1:5000/dataset_places_sentiment" class="btn btn-outline-success">Go</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-5">  
+      <div class="card w-100 text-center" >
+        <div class="card-body">
+          <h5 class="card-title">Sentiment's map</h5>
+          <p class="card-text">Take a look at the sentiment in the different locations of the city</p>
+          <a href="http://127.0.0.1:5000/brescia_sentiment" class="btn btn-outline-danger">Go</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1">  
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-md-2">  
+    </div>
+    <div class="col-md-8 text-center"  style="vertical-align: text-bottom; margin-top:8%; ">
+      <img src="..\static\images\skyline.jpg" class="img-fluid" alt="Responsive image" style="margin:left:20%" >
+    </div>
+    <div class="col-md-2">  
+    </div>
+  </div> 
+    </div> 
+</body></html>

@@ -1,0 +1,165 @@
+<html>
+<head>
+  <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+
+  <script src="{{ url_for('static', filename='jquery-3.1.1.js') }}"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <style>
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row" style="height: 13%;">
+      <div class="col-md-12">    
+        <h5 class="display-4 text-center" style="height: 12%; margin-top:1%; cursor: pointer;" onclick="location.href='http://127.0.0.1:5000/';"> 
+          &nbsp A walk in Brescia / <small>locations' sentiment with NER </small></h5> 
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-lg-12"  style="height: 1%; background:linear-gradient(to right, green, yellow, orange, brown, purple, blue)">
+      </div>
+    </div> 
+
+</div>
+    <div class="row" style="margin-top:2%;"">
+
+    
+      <div class="col-md-1">  
+      </div>
+   <div class="col-md-3">  
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+       # of places with positive sentiment
+       <span class="badge badge-primary badge-pill">171</span>
+     </li>
+   </ul>
+      
+ </div>
+
+      <div class="col-md-4">  
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            # of places with negative sentiment
+           <span class="badge badge-primary badge-pill">214</span>
+         </li>
+       </ul>
+     </div>
+     <div class="col-md-3">  
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+       # of Categories
+       <span class="badge badge-primary badge-pill">9</span>
+     </li>
+   </ul>
+      
+ </div>
+ <div class="col-md-1">  
+
+ </div>
+</div>
+<div class="row" style="margin-top:2%; height:75%;"">
+      <div class="col-md-1">  
+      </div>
+      
+
+   <div class="col-md-3">  
+    
+      <div class="card" >
+        <div class="card-header">
+          Places with the best sentiment</div>
+        
+        <ul class="list-group">
+          {% for i in range(0,best.__len__()) %}
+          <li class="list-group-item">
+           <span class="badge badge-primary badge-pill">{{best[i]['sentiment_norm']}}</span>
+             <a href="{{best[i]['uri']}}">{{best[i]['uri_short']}}</a> - {{best[i]['type']}}
+               
+          </li>
+          {% endfor %}
+        </ul>
+        </div>
+    </div>
+      <div class="col-md-4">  
+        
+         <div class="card" >
+        <div class="card-header">
+           Places with the worst sentiment</div>
+        
+        <ul class="list-group ">
+          {% for i in range(0,worst.__len__()) %}
+          <li class="list-group-item">
+            <span class="badge badge-primary badge-pill">{{worst[i]['sentiment_norm']}}</span>
+            <a href="{{worst[i]['uri']}}">{{worst[i]['uri_short']}}</a> - {{worst[i]['type']}}
+              
+          </li>
+          {% endfor %}
+        </ul>
+        </div>
+
+     </div>
+   <div class="col-md-3">  
+    
+      <div class="card" >
+        <div class="card-header">
+          Average sentiment for categories</div>
+
+          <!-- Table -->
+          <table class="table">
+            <tr>
+              <td>Elementi stradali:</td>
+              <td>-18.8</td> 
+            </tr>
+            <tr>
+              <td>Sedi scolastiche/culturali:</td>
+              <td>85.5</td> 
+            </tr>
+              <tr>
+              <td>Luoghi turistici/Monumenti:</td>
+              <td>21.2</td> 
+            </tr>
+            <tr>
+              <td> Edifici religiosi:</td>
+              <td>27.8</td>  
+            </tr>
+           <tr>
+              <td>Zone cittadine:</td>
+             <td>-27.7</td> 
+            </tr>
+              <tr>
+              <td>Edifici civili:</td>
+              <td>47</td> 
+            </tr>
+                <tr>
+              <td> Fermate del TPL:</td>
+              <td>-41.9</td> 
+            </tr>
+                <tr>
+              <td> Edifici sanitari:</td>
+              <td>41.47</td>  
+            </tr>
+              <tr>
+              <td> Edifici sportivi:</td>
+              <td>-156</td> 
+            </tr>
+          </table>
+        </div>
+        </div>
+    </div>
+ <div class="col-md-1">  
+
+ </div>
+ <div class="col-md-1">  
+
+ </div>
+</div>
+
+</div> 
+</body>
+</html>

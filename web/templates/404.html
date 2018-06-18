@@ -1,0 +1,13 @@
+{% extends "layout.html" %} {% block title %}Page Not Found{% endblock %} {% block head %} {{ super() }}
+<style type="text/css">
+  .important {
+    color: #336699;
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="alert alert-danger" role="alert">
+  <h1>Pagina non trovata</h1>
+  <p>Errore 404. Quello che stavi cercando non è qui.</p>
+  <p><a href="{{ url_for('index') }}">Ritorna alla home</a> </p>
+</div>
+{% endblock %}

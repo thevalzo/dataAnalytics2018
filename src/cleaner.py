@@ -23,7 +23,7 @@ class Cleaner:
 
         #Copy article text from article_raw to article_clean
         cursor = self.db.cursor()
-        query = "UPDATE articles SET article_clean=article_raw"
+        query = "UPDATE articles SET article_clean=article_raw where article_clean is NULL "
         cursor.execute(query)
         self.db.commit()
 
@@ -57,6 +57,6 @@ class Cleaner:
             #save tokenized article
             cursor = self.db.cursor()
             query = "UPDATE articles SET article_token=\'" + article + "\' WHERE url=\'" + url + "\';"
-            print(" ** updated  article " + url + " ** ")
+            print(" ** tokenized  article " + url + " ** ")
             cursor.execute(query)
             self.db.commit()

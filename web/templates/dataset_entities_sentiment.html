@@ -1,0 +1,146 @@
+<html>
+<head>
+  <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+
+  <script src="{{ url_for('static', filename='jquery-3.1.1.js') }}"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <style>
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row" style="height: 13%;">
+      <div class="col-md-12">    
+        <h5 class="display-4 text-center" style="height: 12%; margin-top:1%; cursor: pointer;" onclick="location.href='http://127.0.0.1:5000/';"> 
+          &nbsp A walk in Brescia / <small>locations' sentiment with NER </small></h5> 
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-lg-12"  style="height: 1%; background:linear-gradient(to right, green, yellow, orange, brown, purple, blue)">
+      </div>
+    </div> 
+        <div class="row" style="height:5%; margin-top:2%" >
+      <div class="col-md-1">  
+      </div>
+      <div class="col-md-10">  
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link  active" href="http://127.0.0.1:5000/dataset_entities_sentiment">General</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="http://127.0.0.1:5000/dataset_places_sentiment">Places</a>
+          </li>
+        </ul>
+      </div>
+ <div class="col-md-1">  
+
+ </div>
+</div>
+    <div class="row" style="margin-top:2%;"">
+
+    
+      <div class="col-md-1">  
+      </div>
+   <div class="col-md-3">  
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+       # of Entities (with wikidata id)
+       <span class="badge badge-primary badge-pill">13810</span>
+     </li>
+   </ul>
+      
+ </div>
+
+      <div class="col-md-4">  
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+           # of articles
+           <span class="badge badge-primary badge-pill">19886</span>
+         </li>
+       </ul>
+     </div>
+
+
+  <div class="col-md-3">  
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+       # of Categories
+       <span class="badge badge-primary badge-pill">11</span>
+     </li>
+   </ul>
+      
+ </div>
+ <div class="col-md-1">  
+
+ </div>
+</div>
+<div class="row" style="margin-top:2%; height:75%;"">
+      <div class="col-md-1">  
+      </div>
+      
+
+   <div class="col-md-3">  
+    
+      <div class="card" >
+        <div class="card-header">
+          Most linked entities</div>
+        
+        <ul class="list-group">
+          {% for i in range(0,entities.__len__()) %}
+          <li class="list-group-item">
+           <span class="badge badge-primary badge-pill">{{entities[i]['count']}}</span>
+             <a href="{{entities[i]['uri']}}">{{entities[i]['uri_short']}}</a>
+               
+          </li>
+          {% endfor %}
+        </ul>
+        </div>
+    </div>
+      <div class="col-md-4">  
+        
+         <div class="card" >
+        <div class="card-header">
+          Most linked places in Brescia</div>
+        
+        <ul class="list-group">
+          {% for i in range(0,entities.__len__()) %}
+          <li class="list-group-item">
+           <span class="badge badge-primary badge-pill">{{entities[i]['count']}}</span>
+             <a href="{{entities[i]['uri']}}">{{entities[i]['uri_short']}}</a>
+               
+          </li>
+          {% endfor %}
+        </ul>
+        </div>
+
+     </div>
+   <div class="col-md-3">  
+    
+      <div class="card" >
+        <div class="card-header">
+          # of places for category</div>
+        
+        <ul class="list-group">
+          <li class="list-group-item">
+            <span class="badge badge-primary badge-pill"></span>
+           
+          </li>
+          
+        </ul>
+        </div>
+    </div>
+ <div class="col-md-1">  
+
+ </div>
+</div>
+
+</div> 
+</body>
+</html>

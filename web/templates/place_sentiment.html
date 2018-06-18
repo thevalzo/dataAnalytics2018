@@ -1,0 +1,94 @@
+<html>
+<head>
+  <meta charset="ISO-8859-1">
+  <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+  <script src="{{ url_for('static', filename='jquery-3.1.1.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-theme.min.css') }}">
+</head>
+<body>
+<div class="container">
+ <div class="row" style="height: 13%;">
+      <div class="col-md-12">    
+        <h1 class="display-1 text-center" style=" font-size:50px; margin-top:2%; cursor: pointer;" onclick="location.href='http://127.0.0.1:5000/';"> 
+          &nbsp A walk in Brescia / <small>{{place['label']}}</small></h1> 
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-lg-12"  style="height: 1%; background:linear-gradient(to right, green, yellow, orange, brown, purple, blue)">
+      </div>
+  <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">Generic informations</div>
+          <!-- Table -->
+          <table class="table">
+            <tr>
+              <td>Wikidata ID: {{place['wikidata_id']}}</td> 
+   
+              <td>Url: <a href="{{place['uri']}}">{{place['uri_short']}}</a></td> 
+
+              <td>SurfaceForm: {{place['surfaceForm']}}</td> 
+            </tr>
+              <tr>
+              <td>Aggregated type: {{place['aggregated_type']}}</td> 
+
+              <td>Type: {{place['type']}}</td> 
+              <td></td>
+            </tr>
+           <tr>
+              <td>Sentiment:{{place['sentiment']}}</td> 
+   
+              <td>Sentiment normalizzata:{{place['sentiment_norm']}}</td> 
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="panel panel-default">
+        <div class="panel-heading">Most frequent adjectives</div>
+        <ul class="list-group">
+          {% for i in range(0,words['words'].__len__()) %}
+          <li class="list-group-item">
+            <span class="badge">{{words['words'][i]['num']}}</span>
+            {{words['words'][i]['word']}}
+          </li>
+          {% endfor %}
+        </ul>
+        </div>
+      </div>
+
+      
+      <div class="col-md-4">
+        <div class="panel panel-default">
+        <div class="panel-heading" style="color:#b30000">Most negative adjectives</div>
+        <ul class="list-group " style="color:#ff0000">
+          {% for i in range(0,neg_words.__len__()) %}
+          <li class="list-group-item">
+           {{neg_words[i]['word']}}
+             <span class="badge">{{neg_words[i]['sent']}}</span>
+          </li>
+          {% endfor %}
+        </ul>
+        </div> 
+         </div>
+        <div class="col-md-4">
+        <div class="panel panel-default">
+        <div class="panel-heading"  style="color:#29a329">Most positive adjectives</div>
+        <ul class="list-group"  style="color:#47d147">
+          {% for i in range(0,pos_words.__len__()) %}
+          <li class="list-group-item">
+           {{pos_words[i]['word']}}
+             <span class="badge">{{pos_words[i]['sent']}}</span>
+          </li>
+          {% endfor %}
+        </ul>
+        </div> 
+         </div>
+        </div>
+    </div>
+
+</body>
+</html>

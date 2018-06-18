@@ -10,10 +10,11 @@ Questo l'ordine di esecuzione:
 	Utilizza le classi:
 		- Cleaner.py : ripulische il testo degli articoli e lo tokenizza
 		- EntityLinker.py : Interroga le Dandelion Api, le Wikidata Api, ed effettua operazioni di disambiguazione col fine di individuare i luoghi di Brescia
-		- Sentiment.py : Calcola le parole più frequenti per ogni luogo e il suo sentiment
+		- Sentiment.py : Calcola le parole più frequenti per ogni luogo e il  sentiment
+		- Utility.py :fornisce metodi di supporto alle precedenti
 
 **** SETTAGGIO DELL'AMBIENTE
-
+ La versione utilizzata di python è la 2.7
  E' necessario installare le seguenti librerie utilizzando i comandi da un punto qualsiasi:
 	- pip install scrapy
 	- pip install unidecode
@@ -31,6 +32,7 @@ La cartella data contiene:
 	-il file di testo sorgente del lessico Sentix
 	-lo script python con cui è stato creato il lo script sql di popolamento
 	-lo script sql di popolamento 
+	- il file sql con il database completo
 
 **** ESECUZIONE
 	
@@ -40,8 +42,11 @@ La cartella data contiene:
 		2 - Posizionarsi in DataAnalytics\focused_crawler\focused_crawler
 		Da linea di comando digitare scrapy crawl GDB_articles
 	
-		3 - Posizionarsi in DataAnalytics\
+		3 - Posizionarsi in DataAnalytics\src
 		Eseguire main.py
+
+		3 - Posizionarsi in DataAnalytics\src
+		Eseguire app.py per azionare il server web , visibile a http://127.0.0.1:5000/
 		
 
 
